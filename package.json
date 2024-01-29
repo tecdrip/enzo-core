@@ -1,0 +1,28 @@
+{
+  "name": "enzo-lib",
+  "version": "0.0.1",
+  "module": "src/index.tsx",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && npx tsc"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/web": "^0.0.135",
+    "hono": "^3.12.8",
+    "preact": "^10.19.3",
+    "preact-render-to-string": "^6.3.1"
+  }
+}
