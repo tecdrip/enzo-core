@@ -1,5 +1,5 @@
 {
-  "name": "enzo-lib",
+  "name": "enzo-core",
   "version": "0.0.1",
   "module": "src/index.tsx",
   "main": "dist/index.js",
