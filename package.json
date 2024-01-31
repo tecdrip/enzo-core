@@ -1,6 +1,6 @@
 {
   "name": "enzo-core",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "module": "src/index.tsx",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "rimraf dist && npx tsc"
+    "build": "rimraf dist && npx tsc",
+    "prepublishOnly": "bun run build"
   },
   "devDependencies": {
     "@types/bun": "latest",

@@ -1,15 +1,15 @@
 import { Context, Env } from "hono";
 import { ZodError, ZodSchema, z } from "zod";
-import { ComponentType, FunctionComponent, VNode, createContext } from "preact";
+import { ComponentType, VNode, createContext } from "preact";
 import renderToString from "preact-render-to-string";
 import { BodyData } from "hono/utils/body";
 
-let Index: FunctionComponent = ({ children }) => {
+let indexFunction: (children: VNode) => VNode = (children) => {
   return <div>{children}</div>;
 };
 
-export function setIndexComponent(component: typeof Index) {
-  Index = component;
+export function setIndexComponent(func: (children: VNode) => VNode) {
+  indexFunction = func;
 }
 
 export type ErrorBag = {
@@ -56,10 +56,6 @@ export function applyContext(c: Context, component: VNode) {
 }
 
 export async function render(c: Context, component: VNode) {
-  if (!Index) {
-    throw new Error("Index component not set");
-  }
-
   const isHxRequest = c.req.header("Hx-Request");
 
   // apply reqest context to component
@@ -68,7 +64,7 @@ export async function render(c: Context, component: VNode) {
   // append component to index.html unless hx request header is present
   const stringComponent = isHxRequest
     ? renderToString(componentWithContext)
-    : renderToString(<Index>{componentWithContext}</Index>);
+    : renderToString(indexFunction(componentWithContext));
 
   return c.html(stringComponent);
 }
