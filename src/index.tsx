@@ -55,7 +55,7 @@ export function applyContext(c: Context, component: VNode) {
   return <RequestProvider data={c}>{component}</RequestProvider>;
 }
 
-export async function render(c: Context, component: VNode) {
+export function renderComponent(c: Context, component: VNode) {
   const isHxRequest = c.req.header("Hx-Request");
 
   // apply reqest context to component
