@@ -51,14 +51,14 @@ function RequestProvider({
   );
 }
 
-export function applyContext<E extends Env, P extends string>(
-  c: Context<E, P>,
-  component: VNode
-) {
+export function applyContext(c: Context, component: VNode) {
   return <RequestProvider data={c}>{component}</RequestProvider>;
 }
 
-export function renderComponent(c: Context, component: VNode) {
+export function renderComponent<E extends Env, P extends string>(
+  c: Context<E, P>,
+  component: VNode
+) {
   const isHxRequest = c.req.header("Hx-Request");
 
   // apply reqest context to component
