@@ -103,7 +103,10 @@ export function handleZodErrors<T, E extends Env, P extends string>(
   const templateMessage = createTemplateMessageFromResult(result);
 
   if (templateMessage) {
-    return render(context, <Component templateMessage={templateMessage} />);
+    return renderComponent(
+      context,
+      <Component templateMessage={templateMessage} />
+    );
   }
 
   return;
