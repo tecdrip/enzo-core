@@ -51,7 +51,10 @@ function RequestProvider({
   );
 }
 
-export function applyContext(c: Context, component: VNode) {
+export function applyContext<E extends Env, P extends string>(
+  c: Context<E, P>,
+  component: VNode
+) {
   return <RequestProvider data={c}>{component}</RequestProvider>;
 }
 
