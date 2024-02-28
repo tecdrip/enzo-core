@@ -1,6 +1,6 @@
 {
   "name": "enzo-core",
-  "version": "0.0.9",
+  "version": "0.0.17",
   "module": "src/index.tsx",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,16 +14,15 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/web": "^0.0.135",
+    "hono": "^3.11.7",
+    "preact": "^10.19.3",
+    "preact-render-to-string": "^6.3.1",
+    "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@types/web": "^0.0.135",
-    "hono": "^3.12.8",
-    "preact": "^10.19.3",
-    "preact-render-to-string": "^6.3.1"
   }
 }

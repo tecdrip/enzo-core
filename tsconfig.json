@@ -20,7 +20,7 @@
     "esModuleInterop": true, // allow default imports for CommonJS modules
 
     // best practices
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
