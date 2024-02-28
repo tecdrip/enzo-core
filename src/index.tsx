@@ -7,3 +7,5 @@ export {
   RequestContext,
   LoaderContext,
 } from "./core";
+
+export { requestTimingLogger } from "./middleware/requestTimingLogger";
